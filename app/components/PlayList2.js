@@ -6,15 +6,14 @@ class PlayList extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className="search">
         <p className="SongName">Current Playlist:</p>
         <Autocomplete
-          inputProps={{title: "Title"}}
-          value={this.props.state.value2}
+          value={this.props.state.value}
           items={this.props.playlist}
           getItemValue={(item) => item.title}
-          onChange={this.props.handleChange2}
-          onSelect={this.props.handleSelect2}
+          onChange={this.props.handleChange}
+          onSelect={this.props.handleSelect}
 
           renderItem={(item, isHighlighted) =>
             <div

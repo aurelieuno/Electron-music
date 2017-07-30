@@ -1,7 +1,7 @@
 {
-  "name": "sound",
+  "name": "electron-sound",
   "version": "1.0.0",
-  "description": "Project for React Training's fundamental course.",
+  "description": "Learning Electron",
   "main": "main.js",
   "scripts": {
     "start": "webpack && npm run start2",
@@ -31,7 +31,9 @@
     "axios": "^0.16.2",
     "classnames": "^2.2.5",
     "electron": "^1.6.11",
+    "electron-reload": "^1.2.1",
     "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "prop-types": "^15.5.10",
     "react": "^16.0.0-alpha.5",

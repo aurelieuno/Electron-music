@@ -2,6 +2,8 @@ const electron = require('electron')
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 
+require('electron-reload')(__dirname+'/dist');
+
 const path = require('path')
 const url = require('url')
 
@@ -9,7 +11,10 @@ let mainWindow
 
 function createWindow () {
 
-  mainWindow = new BrowserWindow({width: 600, height: 450})
+  mainWindow = new BrowserWindow(
+    {width: 350,
+     height: 350,
+     icon:'dist/girl-smiley-face.png'})
 
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, './dist/index.html'),

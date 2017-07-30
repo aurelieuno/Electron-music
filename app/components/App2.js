@@ -1,11 +1,12 @@
 import React from 'react';
 import Sound from 'react-sound';
 import PlayerControl from './PlayerControl'
-import PlayList from './PlayList'
+import PlayList from './PlayList2'
 import ProgressBar from './ProgressBar'
 import SearchBar from './SearchBar'
 import {id, fetchAPI} from '../utils/api.js'
 import lodash from 'lodash'
+import songs from './songs2.json'
 
 class App extends React.Component {
     constructor(props) {
@@ -14,13 +15,21 @@ class App extends React.Component {
             client_id: id,
             playlist :"",
             value:"",
-            value2:"",
             currentSong : "",
             playStatus : Sound.status.PLAYING,
             volume: 50,
             position:0,
             duration:0
         }
+    }
+
+    componentDidMount() {
+      this.setState({
+        playlist : songs,
+        currentSong: songs[0]
+      })
+      var arr = songs.map(el=>el.title);
+      console.log(JSON.stringify(arr,null,2));
     }
 
     onPrevious () {
@@ -74,36 +83,29 @@ class App extends React.Component {
           (seconds < 10 ? '0' : '') + seconds
     }
 
-    handleChange(event){
+    handleChange(event,value){
+      event.preventDefault();
+
       this.setState({value:event.target.value})
+
+        fetchAPI(this.state.value)
+        .then(res => {
+          console.log(res)
+          this.setState({
+            playlist: res,
+            //currentSong: res[0],
+            //position:0
+
+          })
+      })
+        .catch(error => console.log(error));
     }
 
-    handleChange2(event,value){
-      this.setState({value2:event.target.value})
-    }
-
-    handleSubmit(event){
-       event.preventDefault();
-
-      fetchAPI(this.state.value)
-      .then(res => {
-        console.log(res)
-        this.setState({
-          playlist: res,
-          currentSong: res[0],
-          position:0
-
-        })
-    })
-      .catch(error => console.log(error));
-  }
-
-
-    handleSelect2(value,item){
+    handleSelect(value,item){
       var index = this.state.playlist.indexOf(item);
           this.setState({
               currentSong : this.state.playlist[index],
-              value2: value,
+              value: value,
               position:0
           })
       }
@@ -130,21 +132,13 @@ render() {
   return (
     <div>
 
-    <SearchBar
-    state={this.state}
-    handleChange={this.handleChange.bind(this)}
-    handleSubmit={this.handleSubmit.bind(this)}/>
-
-    {this.state.playlist &&
     <PlayList
     playlist = {this.state.playlist}
     state = {this.state}
-    handleChange2={this.handleChange2.bind(this)}
-    handleSelect2={this.handleSelect2.bind(this)}
+    handleChange={this.handleChange.bind(this)}
+    handleSelect={this.handleSelect.bind(this)}
     onSongChange= {this.onSongChange.bind(this)}/>
-  }
 
-    {this.state.currentSong &&
     <div className = "player" style = {playerStyle}>
 
     <PlayerControl
@@ -181,7 +175,7 @@ render() {
       position = {this.state.position}/>
 
       </div>
-    }
+
 
       </div>
 
