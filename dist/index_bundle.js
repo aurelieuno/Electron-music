@@ -3952,7 +3952,7 @@ var App = function (_React$Component) {
         }
     }, {
         key: 'handleChange',
-        value: function handleChange(event) {
+        value: function handleChange(event, value) {
             var _this2 = this;
 
             event.preventDefault();
