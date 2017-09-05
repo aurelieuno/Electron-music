@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {fetchAPI} from '../utils/api.js';
+import {fetchAPI} from '../app/utils/api.js';
 
 class SearchBar extends React.Component {
 

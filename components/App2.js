@@ -4,7 +4,7 @@ import PlayerControl from './PlayerControl'
 import PlayList from './PlayList2'
 import ProgressBar from './ProgressBar'
 import SearchBar from './SearchBar'
-import {id, fetchAPI} from '../utils/api.js'
+import {id, fetchAPI} from '../app/utils/api.js'
 import lodash from 'lodash'
 import songs from './songs2.json'
 

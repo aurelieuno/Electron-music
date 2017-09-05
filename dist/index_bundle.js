@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 48);
+/******/ 	return __webpack_require__(__webpack_require__.s = 44);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -3819,19 +3819,19 @@ var _reactSound = __webpack_require__(91);
 
 var _reactSound2 = _interopRequireDefault(_reactSound);
 
-var _PlayerControl = __webpack_require__(45);
+var _PlayerControl = __webpack_require__(46);
 
 var _PlayerControl2 = _interopRequireDefault(_PlayerControl);
 
-var _PlayList = __webpack_require__(44);
+var _PlayList = __webpack_require__(45);
 
 var _PlayList2 = _interopRequireDefault(_PlayList);
 
-var _ProgressBar = __webpack_require__(46);
+var _ProgressBar = __webpack_require__(47);
 
 var _ProgressBar2 = _interopRequireDefault(_ProgressBar);
 
-var _SearchBar = __webpack_require__(47);
+var _SearchBar = __webpack_require__(48);
 
 var _SearchBar2 = _interopRequireDefault(_SearchBar);
 
@@ -4149,6 +4149,20 @@ module.exports = [{"kind":"track","id":263778076,"created_at":"2016/05/12 14:32:
 "use strict";
 
 
+var React = __webpack_require__(4);
+var ReactDOM = __webpack_require__(21);
+__webpack_require__(42);
+var App = __webpack_require__(41);
+
+ReactDOM.render(React.createElement(App, null), document.getElementById("app"));
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(4);
@@ -4218,7 +4232,7 @@ var PlayList = function (_React$Component) {
 module.exports = PlayList;
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4330,7 +4344,7 @@ var PlayerControl = function (_React$Component) {
 module.exports = PlayerControl;
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4393,7 +4407,7 @@ module.exports = ProgressBar;
 with no class Name reverts to the blue original formatting*/
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4459,20 +4473,6 @@ var SearchBar = function (_React$Component) {
 }(_react2.default.Component);
 
 module.exports = SearchBar;
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var React = __webpack_require__(4);
-var ReactDOM = __webpack_require__(21);
-__webpack_require__(42);
-var App = __webpack_require__(41);
-
-ReactDOM.render(React.createElement(App, null), document.getElementById("app"));
 
 /***/ }),
 /* 49 */
